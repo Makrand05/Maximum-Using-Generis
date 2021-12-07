@@ -46,4 +46,26 @@ public class GenericMaximumTest {
         Float expectedResult=40.3f;
         Assert.assertEquals(expectedResult,actualResult);
     }
+    @Test
+        //Test Case for the String where max at first Position
+    void given3String_whenMax_returnCorrectMax_case1(){
+        String actualResult= GenericMaximum.findStringMaximum("abc","PQR","XYZ");
+        String expectedResult="abc";
+        Assert.assertEquals(expectedResult,actualResult);
+    }
+    @Test
+        //Test Case for the String where max at Second Position
+    void given3String_whenMax_returnCorrectMax_case2(){
+        String actualResult= GenericMaximum.findStringMaximum("abc","pqr","XYZ");
+        String expectedResult="pqr";
+        Assert.assertEquals(expectedResult,actualResult);
+    }
+    @Test
+        //Test Case for the String where max at Third Position
+    void given3String_whenMax_returnCorrectMax_case3(){
+        String actualResult= GenericMaximum.findStringMaximum("abc","PQR","xyz");
+        String expectedResult="xyz";
+        Assert.assertEquals(expectedResult,actualResult);
+    }
+
 }
