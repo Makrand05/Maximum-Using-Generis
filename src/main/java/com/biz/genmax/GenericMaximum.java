@@ -1,13 +1,28 @@
 package com.biz.genmax;
 
-public class GenericMaximum {
+public class GenericMaximum <T extends Comparable>  {
+
+    T a,b,c;
+
+    GenericMaximum(){};
+    public GenericMaximum(T a, T b, T c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
     public static void main(String[] args) {
-        Integer intResult = findMaximum(10, 20, 30);
-        System.out.println(intResult);
-        Float floatResult = findMaximum(10.1f, 20.2f, 30.3f);
-        System.out.println(floatResult);
-        String stringResult=findMaximum("ABC","PQR","XYZ");
-        System.out.println(stringResult);
+        GenericMaximum genericMaximum=new GenericMaximum();
+        Integer integer= (Integer) genericMaximum.findMaximum(10, 20, 30);
+        System.out.println(integer);
+
+        //GenericMaximum genericFloatMaximum=new GenericMaximum(10.1f, 20.2f, 30.3f);
+        Float aFloat= (Float) genericMaximum.findMaximum(0.1f, 20.2f, 30.3f);
+        System.out.println(aFloat);
+
+        //GenericMaximum genericStringMaximum=new GenericMaximum("ABC","PQR","XYZ");
+        String string= (String) genericMaximum.findMaximum("ABC","PQR","XYZ");
+        System.out.println(string);
 
     }
 
@@ -21,4 +36,12 @@ public class GenericMaximum {
 
     }
 
+    @Override
+    public String toString() {
+        return "GenericMaximum{" +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                '}';
+    }
 }
