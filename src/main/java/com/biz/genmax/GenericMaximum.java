@@ -11,7 +11,7 @@ public class GenericMaximum {
 
     }
 
-    public static <T extends Comparable> T findIntegerMaximum(T a, T b, T c) {
+    public static Integer findIntegerMaximum(Integer a, Integer b, Integer c) {
         if (a.compareTo(b) > 0 && a.compareTo(c) > 0) {
             return a;
         } else if (b.compareTo(a) > 0 && b.compareTo(c) > 0) {
