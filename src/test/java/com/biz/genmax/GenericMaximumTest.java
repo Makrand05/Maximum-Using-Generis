@@ -14,7 +14,7 @@ public class GenericMaximumTest {
     @Test
         //Test Case for the Integer where max at Second Position
     void given3Integer_whenMax_returnCorrectMax_case2(){
-        Integer actualResult= (Integer) GenericMaximum.findMaximum(30,40,10);
+        Integer actualResult= (Integer) GenericMaximum.findMaximum(20,90,30,40,10);
         Integer expectedResult=40;
         Assert.assertEquals(expectedResult,actualResult);
     }

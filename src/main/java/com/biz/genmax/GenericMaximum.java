@@ -1,5 +1,7 @@
 package com.biz.genmax;
 
+import java.util.Arrays;
+
 public class GenericMaximum <T extends Comparable>  {
 
     T a,b,c;
@@ -13,26 +15,23 @@ public class GenericMaximum <T extends Comparable>  {
 
     public static void main(String[] args) {
         GenericMaximum genericMaximum=new GenericMaximum();
-        Integer integer= (Integer) genericMaximum.findMaximum(10, 20, 30);
+        Integer integer= (Integer) genericMaximum.findMaximum(100, 120, 30,50,80,100);
         System.out.println(integer);
 
         //GenericMaximum genericFloatMaximum=new GenericMaximum(10.1f, 20.2f, 30.3f);
-        Float aFloat= (Float) genericMaximum.findMaximum(0.1f, 20.2f, 30.3f);
+        Float aFloat= (Float) genericMaximum.findMaximum(10.1f, 20.2f, 46.0f,17.6f);
         System.out.println(aFloat);
 
         //GenericMaximum genericStringMaximum=new GenericMaximum("ABC","PQR","XYZ");
-        String string= (String) genericMaximum.findMaximum("ABC","PQR","XYZ");
+        String string= (String) genericMaximum.findMaximum("ABC","PQR","XYZ","abc","aBC","KMA");
         System.out.println(string);
 
     }
 
-    public static <T extends Comparable> T findMaximum(T a, T b, T c) {
-        if (a.compareTo(b) > 0 && a.compareTo(c) > 0) {
-            return a;
-        } else if (b.compareTo(a) > 0 && b.compareTo(c) > 0) {
-            return b;
-        }
-        return c;
+    public static <T extends Comparable> T findMaximum(T... a) {
+        Arrays.sort(a);
+
+        return a[a.length-1];
 
     }
 
