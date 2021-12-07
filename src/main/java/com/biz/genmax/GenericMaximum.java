@@ -15,22 +15,21 @@ public class GenericMaximum <T extends Comparable>  {
 
     public static void main(String[] args) {
         GenericMaximum genericMaximum=new GenericMaximum();
-        Integer integer= (Integer) genericMaximum.findMaximum(100, 120, 30,50,80,100);
+        Integer integer= (Integer) genericMaximum.printMax(100, 120, 30,50,80,100);
         System.out.println(integer);
 
         //GenericMaximum genericFloatMaximum=new GenericMaximum(10.1f, 20.2f, 30.3f);
-        Float aFloat= (Float) genericMaximum.findMaximum(10.1f, 20.2f, 46.0f,17.6f);
+        Float aFloat= (Float) genericMaximum.printMax(10.1f, 20.2f, 46.0f,17.6f);
         System.out.println(aFloat);
 
         //GenericMaximum genericStringMaximum=new GenericMaximum("ABC","PQR","XYZ");
-        String string= (String) genericMaximum.findMaximum("ABC","PQR","XYZ","abc","aBC","KMA");
+        String string= (String) genericMaximum.printMax("ABC","PQR","XYZ","abc","aBC","KMA");
         System.out.println(string);
 
     }
 
-    public static <T extends Comparable> T findMaximum(T... a) {
+    public static <T extends Comparable> T printMax(T... a) {
         Arrays.sort(a);
-
         return a[a.length-1];
 
     }
